@@ -1,16 +1,19 @@
 package com.athar.bms.security.config;
 
-import com.athar.bms.security.service.CustomUserDetailsService;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+
+import com.athar.bms.security.service.CustomUserDetailsService;
 
 @Configuration
 public class SecurityConfig {
@@ -25,6 +28,7 @@ public class SecurityConfig {
             AuthenticationConfiguration configuration) throws Exception {
         return configuration.getAuthenticationManager();
     }
+
     @Bean
     public DaoAuthenticationProvider authenticationProvider(
             CustomUserDetailsService userDetailsService,
@@ -44,11 +48,13 @@ public class SecurityConfig {
 
         http
                 .csrf(csrf -> csrf.disable())
+
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll()
                         .anyRequest().authenticated()
                 )
-                .httpBasic(Customizer.withDefaults());
+
+                .httpBasic(httpBasic -> {});
 
         return http.build();
     }

@@ -15,6 +15,10 @@ import com.athar.bms.role.repository.RoleRepository;
 import com.athar.bms.user.entity.User;
 import com.athar.bms.user.repository.UserRepository;
 
+import com.athar.bms.business.entity.Business;
+import com.athar.bms.business.entity.BusinessMember;
+import com.athar.bms.role.entity.Role;
+
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -41,7 +45,21 @@ public class AuthServiceImpl implements AuthService {
     @Transactional
     public AuthenticationResponse register(RegisterRequest request) {
 
-        return null;
+        if (userRepository.existsByEmail(request.getEmail())) {
+            throw new RuntimeException("Email already exists");
+        }
+
+        User user = createUser(request);
+
+        Business business = createBusiness(request);
+
+        Role ownerRole = getOwnerRole();
+
+        createBusinessMember(user, business, ownerRole);
+
+        return AuthenticationResponse.builder()
+                .message("Registration successful")
+                .build();
     }
 
     @Override
@@ -63,5 +81,35 @@ public class AuthServiceImpl implements AuthService {
                 .build();
 
         return userRepository.save(user);
+    }
+
+    private Business createBusiness(RegisterRequest request) {
+
+        Business business = Business.builder()
+                .businessName(request.getBusinessName())
+                .build();
+
+        return businessRepository.save(business);
+    }
+
+    private Role getOwnerRole() {
+
+        return roleRepository.findByName("OWNER")
+                .orElseThrow(() ->
+                        new RuntimeException("OWNER role not found"));
+    }
+
+    private BusinessMember createBusinessMember(
+            User user,
+            Business business,
+            Role role) {
+
+        BusinessMember member = BusinessMember.builder()
+                .user(user)
+                .business(business)
+                .role(role)
+                .build();
+
+        return businessMemberRepository.save(member);
     }
 }
