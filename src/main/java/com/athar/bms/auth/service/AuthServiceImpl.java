@@ -10,7 +10,7 @@ import com.athar.bms.business.repository.BusinessRepository;
 
 import com.athar.bms.role.repository.RoleRepository;
 
-//import com.athar.bms.security.jwt.JwtService;
+import com.athar.bms.security.jwt.JwtService;
 
 import com.athar.bms.user.entity.User;
 import com.athar.bms.user.repository.UserRepository;
@@ -20,6 +20,9 @@ import com.athar.bms.business.entity.BusinessMember;
 import com.athar.bms.role.entity.Role;
 
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -39,7 +42,9 @@ public class AuthServiceImpl implements AuthService {
 
     private final PasswordEncoder passwordEncoder;
 
-    //private final JwtService jwtService;
+    private final AuthenticationManager authenticationManager;
+
+    private final JwtService jwtService;
 
     @Override
     @Transactional
@@ -65,9 +70,21 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public AuthenticationResponse login(LoginRequest request) {
 
-        // TODO
+        authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        request.getEmail(),
+                        request.getPassword()
+                )
+        );
+        User user = userRepository.findByEmail(request.getEmail())
+                .orElseThrow(() ->
+                        new RuntimeException("User not found"));
+        String token = jwtService.generateToken(user);
 
-        return null;
+        return AuthenticationResponse.builder()
+                .token(token)
+                .message("Login successful")
+                .build();
     }
 
     private User createUser(RegisterRequest request) {
