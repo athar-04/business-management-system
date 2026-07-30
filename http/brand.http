@@ -1,0 +1,29 @@
+PUT http://localhost:8080/api/brands/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1NDExNTQ1LCJleHAiOjE3ODU0OTc5NDV9.6MNJ8B0G85LmmjKMMwZMg2jWqqzBDzXYjQmdAvCkmzKFI61hpD0uNLHPrWbNxkjx
+Content-Type: application/json
+
+{
+  "name": "ABT Latex Pvt Ltd",
+  "description": "Updated Description",
+  "categoryId": 4
+}
+{}
+
+###
+GET http://localhost:8080/api/brands/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1NDExNTQ1LCJleHAiOjE3ODU0OTc5NDV9.6MNJ8B0G85LmmjKMMwZMg2jWqqzBDzXYjQmdAvCkmzKFI61hpD0uNLHPrWbNxkjx
+###
+GET http://localhost:8080/api/brands
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1NDExNTQ1LCJleHAiOjE3ODU0OTc5NDV9.6MNJ8B0G85LmmjKMMwZMg2jWqqzBDzXYjQmdAvCkmzKFI61hpD0uNLHPrWbNxkjx
+
+###
+POST http://localhost:8080/api/brands
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1NDExNTQ1LCJleHAiOjE3ODU0OTc5NDV9.6MNJ8B0G85LmmjKMMwZMg2jWqqzBDzXYjQmdAvCkmzKFI61hpD0uNLHPrWbNxkjx
+Content-Type: application/json
+
+{
+  "name": "Adhesives",
+  "description": "Manufacturer of Adhesives",
+  "categoryId": 4
+}
+

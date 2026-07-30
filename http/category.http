@@ -1,0 +1,30 @@
+DELETE http://localhost:8080/api/categories/2
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1NDAxMDg3LCJleHAiOjE3ODU0ODc0ODd9.4-PfRv-bX8Zzl7pBcecnZK1Rmxfj9Z4EDV5NAb7fwOS-y5s_Kyw1joBN4PdcLLR4
+
+###
+PUT http://localhost:8080/api/categories/2
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1NDAxMDg3LCJleHAiOjE3ODU0ODc0ODd9.4-PfRv-bX8Zzl7pBcecnZK1Rmxfj9Z4EDV5NAb7fwOS-y5s_Kyw1joBN4PdcLLR4
+Content-Type: application/json
+
+{
+  "name":"Adhesives",
+  "description":"Updated description"
+}
+###
+GET http://localhost:8080/api/categories/2
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1NDAxMDg3LCJleHAiOjE3ODU0ODc0ODd9.4-PfRv-bX8Zzl7pBcecnZK1Rmxfj9Z4EDV5NAb7fwOS-y5s_Kyw1joBN4PdcLLR4
+
+###
+GET http://localhost:8080/api/categories
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1NDAxMDg3LCJleHAiOjE3ODU0ODc0ODd9.4-PfRv-bX8Zzl7pBcecnZK1Rmxfj9Z4EDV5NAb7fwOS-y5s_Kyw1joBN4PdcLLR4
+
+###
+POST http://localhost:8080/api/categories
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1NDExNTQ1LCJleHAiOjE3ODU0OTc5NDV9.6MNJ8B0G85LmmjKMMwZMg2jWqqzBDzXYjQmdAvCkmzKFI61hpD0uNLHPrWbNxkjx
+Content-Type: application/json
+
+{
+  "name": "Adhhesiives",
+  "description": "All adhesive products"
+}
+###
