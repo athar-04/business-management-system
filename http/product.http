@@ -1,0 +1,45 @@
+DELETE http://localhost:8080/api/products/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1NTI2MjY4LCJleHAiOjE3ODU2MTI2Njh9.Sg0xMH4RUfAXV55uYOKQtM5Q_y6kgey_Bv8BvJ8u1h0TxK4fLPx2zKVjcfGWbJyb
+
+###
+PUT http://localhost:8080/api/products/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1NTI2MjY4LCJleHAiOjE3ODU2MTI2Njh9.Sg0xMH4RUfAXV55uYOKQtM5Q_y6kgey_Bv8BvJ8u1h0TxK4fLPx2zKVjcfGWbJyb
+Content-Type: application/json
+
+{
+  "name": "ABT Latex SR-998 Premium",
+  "sku": "ABT-SR998",
+  "description": "Updated Product",
+  "purchasePrice": 260.00,
+  "sellingPrice": 320.00,
+  "unit": "Litre",
+  "minimumStock": 25,
+  "categoryId": 4,
+  "brandId": 1
+}
+
+###
+GET http://localhost:8080/api/products/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1NTI2MjY4LCJleHAiOjE3ODU2MTI2Njh9.Sg0xMH4RUfAXV55uYOKQtM5Q_y6kgey_Bv8BvJ8u1h0TxK4fLPx2zKVjcfGWbJyb
+
+###
+GET http://localhost:8080/api/products
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1NTI2MjY4LCJleHAiOjE3ODU2MTI2Njh9.Sg0xMH4RUfAXV55uYOKQtM5Q_y6kgey_Bv8BvJ8u1h0TxK4fLPx2zKVjcfGWbJyb
+
+###
+POST http://localhost:8080/api/products
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1NTI2MjY4LCJleHAiOjE3ODU2MTI2Njh9.Sg0xMH4RUfAXV55uYOKQtM5Q_y6kgey_Bv8BvJ8u1h0TxK4fLPx2zKVjcfGWbJyb
+Content-Type: application/json
+
+{
+  "name": "ABT Latex SR-998",
+  "sku": "ABT-SR9988",
+  "description": "Synthetic Rubber Adhesive",
+  "purchasePrice": 250.00,
+  "sellingPrice": 300.00,
+  "unit": "Litre",
+  "minimumStock": 20,
+  "categoryId": 4,
+  "brandId": 1
+}
+

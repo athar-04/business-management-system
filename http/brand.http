@@ -7,7 +7,6 @@ Content-Type: application/json
   "description": "Updated Description",
   "categoryId": 4
 }
-{}
 
 ###
 GET http://localhost:8080/api/brands/1
