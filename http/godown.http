@@ -1,0 +1,31 @@
+DELETE http://localhost:8080/api/godowns/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1NTY4OTI3LCJleHAiOjE3ODU2NTUzMjd9.yjesjIIx-DhV2BspSUJR29oFRdFUcLQOSHp2PJMPq2_8T__9WyX8GqbLxbVHLxRC
+
+###
+PUT http://localhost:8080/api/godowns/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1NTY4OTI3LCJleHAiOjE3ODU2NTUzMjd9.yjesjIIx-DhV2BspSUJR29oFRdFUcLQOSHp2PJMPq2_8T__9WyX8GqbLxbVHLxRC
+Content-Type: application/json
+
+{
+  "name": "Main Warehouse",
+  "location": "Peenya Industrial Area",
+  "description": "Updated Description"
+}
+
+###
+GET http://localhost:8080/api/godowns/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1NTY4OTI3LCJleHAiOjE3ODU2NTUzMjd9.yjesjIIx-DhV2BspSUJR29oFRdFUcLQOSHp2PJMPq2_8T__9WyX8GqbLxbVHLxRC
+
+###
+GET http://localhost:8080/api/godowns
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1NTY4OTI3LCJleHAiOjE3ODU2NTUzMjd9.yjesjIIx-DhV2BspSUJR29oFRdFUcLQOSHp2PJMPq2_8T__9WyX8GqbLxbVHLxRC
+###
+POST http://localhost:8080/api/godowns
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1NTY4OTI3LCJleHAiOjE3ODU2NTUzMjd9.yjesjIIx-DhV2BspSUJR29oFRdFUcLQOSHp2PJMPq2_8T__9WyX8GqbLxbVHLxRC
+Content-Type: application/json
+
+{
+  "name": "Main Warehouse",
+  "location": "Police Lane, Bangalore",
+  "description": "Leather Raw Materials"
+}
