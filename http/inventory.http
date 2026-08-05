@@ -1,0 +1,46 @@
+DELETE http://localhost:8080/api/inventory/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1OTU2MzI3LCJleHAiOjE3ODYwNDI3Mjd9.BYwKX-eAz5R-AB4QPL99ZdVG4Eh0WZkXkbQwjuwuEdkHAOcWuU2ryDCwxX7y0HD_
+###
+PUT http://localhost:8080/api/inventory/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1OTU2MzI3LCJleHAiOjE3ODYwNDI3Mjd9.BYwKX-eAz5R-AB4QPL99ZdVG4Eh0WZkXkbQwjuwuEdkHAOcWuU2ryDCwxX7y0HD_
+Content-Type: application/json
+
+{
+  "productId": 2,
+  "godownId": 2,
+  "quantity": 200
+}
+
+###
+GET http://localhost:8080/api/inventory/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1OTU2MzI3LCJleHAiOjE3ODYwNDI3Mjd9.BYwKX-eAz5R-AB4QPL99ZdVG4Eh0WZkXkbQwjuwuEdkHAOcWuU2ryDCwxX7y0HD_
+###
+GET http://localhost:8080/api/inventory
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1OTU2MzI3LCJleHAiOjE3ODYwNDI3Mjd9.BYwKX-eAz5R-AB4QPL99ZdVG4Eh0WZkXkbQwjuwuEdkHAOcWuU2ryDCwxX7y0HD_
+
+###
+POST http://localhost:8080/api/inventory
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1OTU2MzI3LCJleHAiOjE3ODYwNDI3Mjd9.BYwKX-eAz5R-AB4QPL99ZdVG4Eh0WZkXkbQwjuwuEdkHAOcWuU2ryDCwxX7y0HD_
+Content-Type: application/json
+
+{
+  "productId": 2,
+  "godownId": 2,
+  "quantity": 50
+}
+
+###
+GET http://localhost:8080/api/products
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1OTU2MzI3LCJleHAiOjE3ODYwNDI3Mjd9.BYwKX-eAz5R-AB4QPL99ZdVG4Eh0WZkXkbQwjuwuEdkHAOcWuU2ryDCwxX7y0HD_
+
+###
+POST http://localhost:8080/api/inventory
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1OTU2MzI3LCJleHAiOjE3ODYwNDI3Mjd9.BYwKX-eAz5R-AB4QPL99ZdVG4Eh0WZkXkbQwjuwuEdkHAOcWuU2ryDCwxX7y0HD_
+Content-Type: application/json
+
+{
+  "productId": 2,
+  "godownId": 2,
+  "quantity": 100
+}
+
