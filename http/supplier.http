@@ -1,0 +1,35 @@
+DELETE http://localhost:8080/api/suppliers/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NTUxMTYzLCJleHAiOjE3ODY2Mzc1NjN9.Vfs9KN0x2_2UWvopIpLedtF2MYb7SKnZR7J2U_q8UJB3GSJpVYxXrdb8OOBQx_A0
+
+###
+PUT http://localhost:8080/api/suppliers/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NTUxMTYzLCJleHAiOjE3ODY2Mzc1NjN9.Vfs9KN0x2_2UWvopIpLedtF2MYb7SKnZR7J2U_q8UJB3GSJpVYxXrdb8OOBQx_A0
+Content-Type: application/json
+
+{
+  "name": "ABT Latex Pvt Ltd",
+  "phone": "9876543211",
+  "email": "accounts@example.com",
+  "address": "Bangalore, Karnataka",
+  "gstNumber": "29ABCDE1234F1Z5"
+}
+
+###
+GET http://localhost:8080/api/suppliers/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NTUxMTYzLCJleHAiOjE3ODY2Mzc1NjN9.Vfs9KN0x2_2UWvopIpLedtF2MYb7SKnZR7J2U_q8UJB3GSJpVYxXrdb8OOBQx_A0
+###
+GET http://localhost:8080/api/suppliers
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NTUxMTYzLCJleHAiOjE3ODY2Mzc1NjN9.Vfs9KN0x2_2UWvopIpLedtF2MYb7SKnZR7J2U_q8UJB3GSJpVYxXrdb8OOBQx_A0
+
+###
+POST http://localhost:8080/api/suppliers
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NTUxMTYzLCJleHAiOjE3ODY2Mzc1NjN9.Vfs9KN0x2_2UWvopIpLedtF2MYb7SKnZR7J2U_q8UJB3GSJpVYxXrdb8OOBQx_A0
+Content-Type: application/json
+
+{
+  "name": "ABT Latex Pvt Ltd",
+  "phone": "9876543210",
+  "email": "supplier@example.com",
+  "address": "Bangalore, Karnataka",
+  "gstNumber": "29ABCDE1234F1Z5"
+}
