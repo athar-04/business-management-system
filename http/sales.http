@@ -1,0 +1,41 @@
+GET http://localhost:8080/api/sales
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NzIwNzk4LCJleHAiOjE3ODY4MDcxOTh9.iwo9vwIxTOdADiTvZ5Cm4jupOzHG6KV0aq5pDBzbkTvnBapkobJQArYUvSp1FqRE
+###
+POST http://localhost:8080/api/sales
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NzIwNzk4LCJleHAiOjE3ODY4MDcxOTh9.iwo9vwIxTOdADiTvZ5Cm4jupOzHG6KV0aq5pDBzbkTvnBapkobJQArYUvSp1FqRE
+Content-Type: application/json
+
+{
+  "customerId": 1,
+  "godownId": 2,
+  "saleDate": "2026-08-14",
+  "items": [
+    {
+      "productId": 2,
+      "quantity": 500,
+      "sellingPrice": 300.00
+    }
+  ]
+}
+
+###
+GET http://localhost:8080/api/inventory
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NzIwNzk4LCJleHAiOjE3ODY4MDcxOTh9.iwo9vwIxTOdADiTvZ5Cm4jupOzHG6KV0aq5pDBzbkTvnBapkobJQArYUvSp1FqRE
+
+###
+POST http://localhost:8080/api/sales
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NzIwNzk4LCJleHAiOjE3ODY4MDcxOTh9.iwo9vwIxTOdADiTvZ5Cm4jupOzHG6KV0aq5pDBzbkTvnBapkobJQArYUvSp1FqRE
+Content-Type: application/json
+
+{
+  "customerId": 1,
+  "godownId": 2,
+  "saleDate": "2026-08-14",
+  "items": [
+    {
+      "productId": 2,
+      "quantity": 10,
+      "sellingPrice": 300.00
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+PUT http://localhost:8080/api/customers/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NzE5MTgyLCJleHAiOjE3ODY4MDU1ODJ9.aujr2YjcGyhbjG4CnCtKu1czxRrr9hnWcB1zETBFs_6O29IXhUHRnoPwANrVFLWc
+Content-Type: application/json
+
+{
+  "name": "ABC Footwear",
+  "phone": "9876543211",
+  "email": "accounts@example.com",
+  "address": "Bengaluru, Karnataka",
+  "gstNumber": "29ABCDE1234F1Z5"
+}
+
+###
+GET http://localhost:8080/api/customers/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NzE5MTgyLCJleHAiOjE3ODY4MDU1ODJ9.aujr2YjcGyhbjG4CnCtKu1czxRrr9hnWcB1zETBFs_6O29IXhUHRnoPwANrVFLWc
+###
+GET http://localhost:8080/api/customers
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NzE5MTgyLCJleHAiOjE3ODY4MDU1ODJ9.aujr2YjcGyhbjG4CnCtKu1czxRrr9hnWcB1zETBFs_6O29IXhUHRnoPwANrVFLWc
+
+###
+POST http://localhost:8080/api/customers
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NzE5MTgyLCJleHAiOjE3ODY4MDU1ODJ9.aujr2YjcGyhbjG4CnCtKu1czxRrr9hnWcB1zETBFs_6O29IXhUHRnoPwANrVFLWc
+Content-Type: application/json
+
+{
+  "name": "ABC Footwear",
+  "phone": "9876543210",
+  "email": "abc@example.com",
+  "address": "Bengaluru, Karnataka",
+  "gstNumber": "29ABCDE1234F1Z5"
+}

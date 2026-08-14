@@ -16,7 +16,7 @@ GET http://localhost:8080/api/inventory/1
 Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1OTU2MzI3LCJleHAiOjE3ODYwNDI3Mjd9.BYwKX-eAz5R-AB4QPL99ZdVG4Eh0WZkXkbQwjuwuEdkHAOcWuU2ryDCwxX7y0HD_
 ###
 GET http://localhost:8080/api/inventory
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NzEyOTg3LCJleHAiOjE3ODY3OTkzODd9.3j-6h6D3_TDYubwyKWikXAhmZUnLjXk2ok_mru9ttPPFdkgymR0mOH1CG2YWsyMu
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NzIwNzk4LCJleHAiOjE3ODY4MDcxOTh9.iwo9vwIxTOdADiTvZ5Cm4jupOzHG6KV0aq5pDBzbkTvnBapkobJQArYUvSp1FqRE
 
 ###
 POST http://localhost:8080/api/inventory
