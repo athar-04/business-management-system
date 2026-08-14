@@ -1,0 +1,20 @@
+GET http://localhost:8080/api/purchases
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NzEyOTg3LCJleHAiOjE3ODY3OTkzODd9.3j-6h6D3_TDYubwyKWikXAhmZUnLjXk2ok_mru9ttPPFdkgymR0mOH1CG2YWsyMu
+
+###
+POST http://localhost:8080/api/purchases
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NzEyNzU3LCJleHAiOjE3ODY3OTkxNTd9.HvM6GZzLnT-TEG_L77AC6vCn32XQgspiKizCLV3d985OEYP-gjnOxoeYAHFGXSH7
+Content-Type: application/json
+
+{
+  "supplierId": 2,
+  "godownId": 2,
+  "purchaseDate": "2026-08-14",
+  "items": [
+    {
+      "productId": 2,
+      "quantity": 50,
+      "purchasePrice": 250.00
+    }
+  ]
+}

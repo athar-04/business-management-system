@@ -1,9 +1,9 @@
 DELETE http://localhost:8080/api/suppliers/1
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NTUxMTYzLCJleHAiOjE3ODY2Mzc1NjN9.Vfs9KN0x2_2UWvopIpLedtF2MYb7SKnZR7J2U_q8UJB3GSJpVYxXrdb8OOBQx_A0
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NzEyOTg3LCJleHAiOjE3ODY3OTkzODd9.3j-6h6D3_TDYubwyKWikXAhmZUnLjXk2ok_mru9ttPPFdkgymR0mOH1CG2YWsyMu
 
 ###
 PUT http://localhost:8080/api/suppliers/1
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NTUxMTYzLCJleHAiOjE3ODY2Mzc1NjN9.Vfs9KN0x2_2UWvopIpLedtF2MYb7SKnZR7J2U_q8UJB3GSJpVYxXrdb8OOBQx_A0
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NzEyMzU5LCJleHAiOjE3ODY3OTg3NTl9.bIzYnkowS0ZnTGbSAN5EHTSvgyr716RWS__R0akCnn2UCwI9erS9YyrqQaAYYI5B
 Content-Type: application/json
 
 {
@@ -19,17 +19,17 @@ GET http://localhost:8080/api/suppliers/1
 Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NTUxMTYzLCJleHAiOjE3ODY2Mzc1NjN9.Vfs9KN0x2_2UWvopIpLedtF2MYb7SKnZR7J2U_q8UJB3GSJpVYxXrdb8OOBQx_A0
 ###
 GET http://localhost:8080/api/suppliers
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NTUxMTYzLCJleHAiOjE3ODY2Mzc1NjN9.Vfs9KN0x2_2UWvopIpLedtF2MYb7SKnZR7J2U_q8UJB3GSJpVYxXrdb8OOBQx_A0
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NzEyOTg3LCJleHAiOjE3ODY3OTkzODd9.3j-6h6D3_TDYubwyKWikXAhmZUnLjXk2ok_mru9ttPPFdkgymR0mOH1CG2YWsyMu
 
 ###
 POST http://localhost:8080/api/suppliers
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NTUxMTYzLCJleHAiOjE3ODY2Mzc1NjN9.Vfs9KN0x2_2UWvopIpLedtF2MYb7SKnZR7J2U_q8UJB3GSJpVYxXrdb8OOBQx_A0
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NzEyOTg3LCJleHAiOjE3ODY3OTkzODd9.3j-6h6D3_TDYubwyKWikXAhmZUnLjXk2ok_mru9ttPPFdkgymR0mOH1CG2YWsyMu
 Content-Type: application/json
 
 {
-  "name": "ABT Latex Pvt Ltd",
-  "phone": "9876543210",
-  "email": "supplier@example.com",
+  "name": "ABT Latex & Co Pvt Ltd",
+  "phone": "9896543210",
+  "email": "supplier1@example.com",
   "address": "Bangalore, Karnataka",
-  "gstNumber": "29ABCDE1234F1Z5"
+  "gstNumber": "2ABCGE1234F1Z5"
 }
