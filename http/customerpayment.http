@@ -1,0 +1,43 @@
+POST http://localhost:8080/api/customer-payments
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2OTk0NjA5LCJleHAiOjE3ODcwODEwMDl9.VxyCCsPHQ3x1NJWXvJ_yYMwSSzHxBVRVMJTOzru_DunJzxgtWDlq3HerSS1DlwSw
+Content-Type: application/json
+
+{
+  "saleId": 1,
+  "amount": 1.00,
+  "paymentDate": "2026-08-17",
+  "paymentMethod": "UPI",
+  "notes": "Should be rejected"
+}
+###
+POST http://localhost:8080/api/customer-payments
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2OTk0NjA5LCJleHAiOjE3ODcwODEwMDl9.VxyCCsPHQ3x1NJWXvJ_yYMwSSzHxBVRVMJTOzru_DunJzxgtWDlq3HerSS1DlwSw
+Content-Type: application/json
+
+{
+  "saleId": 1,
+  "amount": 2000.00,
+  "paymentDate": "2026-08-17",
+  "paymentMethod": "CASH",
+  "notes": "Final payment"
+}
+
+###
+GET http://localhost:8080/api/customer-payments/sale/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2OTk0NjA5LCJleHAiOjE3ODcwODEwMDl9.VxyCCsPHQ3x1NJWXvJ_yYMwSSzHxBVRVMJTOzru_DunJzxgtWDlq3HerSS1DlwSw
+
+###
+GET http://localhost:8080/api/customer-payments/sale/1/outstanding
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2OTk0NjA5LCJleHAiOjE3ODcwODEwMDl9.VxyCCsPHQ3x1NJWXvJ_yYMwSSzHxBVRVMJTOzru_DunJzxgtWDlq3HerSS1DlwSw
+###
+POST http://localhost:8080/api/customer-payments
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2OTk0NjA5LCJleHAiOjE3ODcwODEwMDl9.VxyCCsPHQ3x1NJWXvJ_yYMwSSzHxBVRVMJTOzru_DunJzxgtWDlq3HerSS1DlwSw
+Content-Type: application/json
+
+{
+  "saleId": 1,
+  "amount": 1000.00,
+  "paymentDate": "2026-08-17",
+  "paymentMethod": "UPI",
+  "notes": "Partial Payment"
+}

@@ -24,7 +24,7 @@ Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tI
 
 ###
 POST http://localhost:8080/api/sales
-Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2NzIwNzk4LCJleHAiOjE3ODY4MDcxOTh9.iwo9vwIxTOdADiTvZ5Cm4jupOzHG6KV0aq5pDBzbkTvnBapkobJQArYUvSp1FqRE
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg2OTk0NjA5LCJleHAiOjE3ODcwODEwMDl9.VxyCCsPHQ3x1NJWXvJ_yYMwSSzHxBVRVMJTOzru_DunJzxgtWDlq3HerSS1DlwSw
 Content-Type: application/json
 
 {
