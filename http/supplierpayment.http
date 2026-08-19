@@ -1,0 +1,19 @@
+POST http://localhost:8080/api/supplier-payments
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg3MTY1NzA4LCJleHAiOjE3ODcyNTIxMDh9.eBKRYinZn88fm-vQ8PTQ3w2iI-t5jax-lHGXozBahbflOwWhrBrdj8PyIiKA5Wav
+Content-Type: application/json
+
+{
+  "purchaseId": 1,
+  "amount": 2500.00,
+  "paymentDate": "2026-08-20",
+  "paymentMethod": "UPI",
+  "notes": "Partial payment"
+}
+
+###
+GET http://localhost:8080/api/supplier-payments/purchase/1/outstanding
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg3MTY1NzA4LCJleHAiOjE3ODcyNTIxMDh9.eBKRYinZn88fm-vQ8PTQ3w2iI-t5jax-lHGXozBahbflOwWhrBrdj8PyIiKA5Wav
+
+###
+GET http://localhost:8080/api/purchases/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg3MTY1NzA4LCJleHAiOjE3ODcyNTIxMDh9.eBKRYinZn88fm-vQ8PTQ3w2iI-t5jax-lHGXozBahbflOwWhrBrdj8PyIiKA5Wav
