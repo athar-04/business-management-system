@@ -1,0 +1,35 @@
+DELETE http://localhost:8080/api/expenses/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg3MTY1NzAyLCJleHAiOjE3ODcyNTIxMDJ9.8vJpo2jO8lH_cxzKoEBXOtJyX-L35T6ELtHA2HYksdTJetFaSOTbQFwoAfGVHHdJ
+
+###
+PUT http://localhost:8080/api/expenses/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg3MTY1NzAyLCJleHAiOjE3ODcyNTIxMDJ9.8vJpo2jO8lH_cxzKoEBXOtJyX-L35T6ELtHA2HYksdTJetFaSOTbQFwoAfGVHHdJ
+Content-Type: application/json
+
+{
+  "category": "Transport",
+  "amount": 1800.00,
+  "expenseDate": "2026-08-20",
+  "description": "Delivery vehicle fuel and parking",
+  "paymentMethod": "CASH"
+}
+
+###
+GET http://localhost:8080/api/expenses/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg3MTY1NzAyLCJleHAiOjE3ODcyNTIxMDJ9.8vJpo2jO8lH_cxzKoEBXOtJyX-L35T6ELtHA2HYksdTJetFaSOTbQFwoAfGVHHdJ
+###
+GET http://localhost:8080/api/expenses
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg3MTY1NzAyLCJleHAiOjE3ODcyNTIxMDJ9.8vJpo2jO8lH_cxzKoEBXOtJyX-L35T6ELtHA2HYksdTJetFaSOTbQFwoAfGVHHdJ
+
+###
+POST http://localhost:8080/api/expenses
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg3MTY1NzAyLCJleHAiOjE3ODcyNTIxMDJ9.8vJpo2jO8lH_cxzKoEBXOtJyX-L35T6ELtHA2HYksdTJetFaSOTbQFwoAfGVHHdJ
+Content-Type: application/json
+
+{
+  "category": "Transport",
+  "amount": 1500.00,
+  "expenseDate": "2026-08-20",
+  "description": "Delivery vehicle fuel",
+  "paymentMethod": "CASH"
+}
