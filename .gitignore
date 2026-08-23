@@ -31,3 +31,18 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Environment variables
+.env
+.env.*
+
+# Logs
+*.log
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# OS
+.DS_Store
+Thumbs.db
