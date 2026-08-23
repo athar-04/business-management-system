@@ -2,9 +2,11 @@ package com.athar.bms.inventory.controller;
 
 import com.athar.bms.inventory.dto.InventoryRequest;
 import com.athar.bms.inventory.dto.InventoryResponse;
+import com.athar.bms.inventory.dto.LowStockResponse;
 import com.athar.bms.inventory.service.InventoryService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -49,5 +51,14 @@ public class InventoryController {
             @PathVariable Long id) {
 
         inventoryService.deleteInventory(id);
+    }
+
+    @GetMapping("/low-stock")
+    public ResponseEntity<List<LowStockResponse>> getLowStock(
+            @RequestParam Integer threshold) {
+
+        return ResponseEntity.ok(
+                inventoryService.getLowStock(threshold)
+        );
     }
 }

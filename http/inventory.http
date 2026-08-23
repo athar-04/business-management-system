@@ -1,3 +1,7 @@
+### Get Low Stock Inventory
+GET http://localhost:8080/api/inventory/low-stock?threshold=100
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg3NDk2MjI5LCJleHAiOjE3ODc1ODI2Mjl9.NX_T3FoeGufdg7UOANfZEeySCHXcnMFBYS2cLj48uuVR_rvMPMnT2lAf5VAUstR9
+###
 DELETE http://localhost:8080/api/inventory/1
 Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg1OTU2MzI3LCJleHAiOjE3ODYwNDI3Mjd9.BYwKX-eAz5R-AB4QPL99ZdVG4Eh0WZkXkbQwjuwuEdkHAOcWuU2ryDCwxX7y0HD_
 ###

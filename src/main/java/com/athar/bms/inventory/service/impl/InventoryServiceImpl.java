@@ -3,6 +3,7 @@ package com.athar.bms.inventory.service.impl;
 import com.athar.bms.godown.repository.GodownRepository;
 import com.athar.bms.inventory.dto.InventoryRequest;
 import com.athar.bms.inventory.dto.InventoryResponse;
+import com.athar.bms.inventory.dto.LowStockResponse;
 import com.athar.bms.inventory.entity.Inventory;
 import com.athar.bms.godown.entity.Godown;
 import com.athar.bms.product.entity.Product;
@@ -138,5 +139,23 @@ public class InventoryServiceImpl implements InventoryService {
                         new RuntimeException("Inventory not found"));
 
         inventoryRepository.delete(inventory);
+    }
+    @Override
+    public List<LowStockResponse> getLowStock(Integer threshold) {
+
+        return inventoryRepository.findAll()
+                .stream()
+                .filter(inventory ->
+                        inventory.getQuantity() <= threshold)
+                .map(inventory -> LowStockResponse.builder()
+                        .inventoryId(inventory.getId())
+                        .productId(inventory.getProduct().getId())
+                        .productName(inventory.getProduct().getName())
+                        .godownId(inventory.getGodown().getId())
+                        .godownName(inventory.getGodown().getName())
+                        .currentQuantity(inventory.getQuantity())
+                        .threshold(threshold)
+                        .build())
+                .toList();
     }
 }

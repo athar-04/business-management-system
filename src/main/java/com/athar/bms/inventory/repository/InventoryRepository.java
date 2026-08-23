@@ -15,4 +15,6 @@ public interface InventoryRepository extends JpaRepository<Inventory, Long> {
     List<Inventory> findByProduct(Product product);
 
     List<Inventory> findByGodown(Godown godown);
+
+    List<Inventory> findByQuantityLessThanEqual(Integer quantity);
 }

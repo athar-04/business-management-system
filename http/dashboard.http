@@ -1,0 +1,2 @@
+GET http://localhost:8080/api/dashboard/summary
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg3NDkzOTMxLCJleHAiOjE3ODc1ODAzMzF9.OHXQSJLlSEx8FI_mpX-2pdkKomGw8XHPhe_LbkDoFgwts1wmLlgDJ2zoF3eZEDpl
