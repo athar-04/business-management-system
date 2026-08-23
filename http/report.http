@@ -1,2 +1,9 @@
+GET http://localhost:8080/api/reports/supplier-outstandings
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg3NDk3NzczLCJleHAiOjE3ODc1ODQxNzN9.QLWCvz6r-zi5b9XO05BeECf82Ygvbl800WoIAGsgWIyOb6-pmFDUCjs0NzCfIhgC
+###
+GET http://localhost:8080/api/reports/customer-outstandings
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg3NDk3NzczLCJleHAiOjE3ODc1ODQxNzN9.QLWCvz6r-zi5b9XO05BeECf82Ygvbl800WoIAGsgWIyOb6-pmFDUCjs0NzCfIhgC
+
+###
 GET http://localhost:8080/api/reports/business
 Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhhcjg5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzg3NDk1MTE3LCJleHAiOjE3ODc1ODE1MTd9.kGMZVZckE35UywomYqB9lD4hQAOIb94sq7e-P9es2ytCi6llrhDuXxftm0BBLCt0
