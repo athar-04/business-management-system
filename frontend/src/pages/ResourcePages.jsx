@@ -1,0 +1,32 @@
+import { useEffect, useState } from "react";
+import ManagementPage from "../components/ManagementPage";
+import { apiError, money } from "../utils/formatters";
+import { categoryService, brandService, godownService, customerService, supplierService, expenseService, inventoryService, reportService } from "../services/entityService";
+
+const simple = (title, description, service, fields, columns, moneyColumns) => () => <ManagementPage {...{ title, description, service, fields, columns, moneyColumns }} />;
+const contactFields = (label) => [{ name: "name", label: `${label} name` }, { name: "phone", label: "Phone", required: false }, { name: "email", label: "Email", type: "email", required: false }, { name: "address", label: "Address", required: false }, { name: "gstNumber", label: "GST number", required: false }];
+const contactColumns = [{ key: "name", label: "Name" }, { key: "phone", label: "Phone" }, { key: "email", label: "Email" }, { key: "gstNumber", label: "GST number" }, { key: "isActive", label: "Status" }];
+
+export const CategoriesPage = simple("Categories", "Organize products into clear catalog groups.", categoryService, [{ name: "name", label: "Category name" }, { name: "description", label: "Description", required: false }], [{ key: "name", label: "Category" }, { key: "description", label: "Description" }, { key: "isActive", label: "Status" }]);
+export const GodownsPage = simple("Godowns", "Manage storage locations across your business.", godownService, [{ name: "name", label: "Godown name" }, { name: "location", label: "Location" }, { name: "description", label: "Description", required: false }], [{ key: "name", label: "Godown" }, { key: "location", label: "Location" }, { key: "description", label: "Description" }, { key: "isActive", label: "Status" }]);
+export const CustomersPage = simple("Customers", "Keep customer contact details and account records current.", customerService, contactFields("Customer"), contactColumns);
+export const SuppliersPage = simple("Suppliers", "Keep supplier contact details and account records current.", supplierService, contactFields("Supplier"), contactColumns);
+export const ExpensesPage = simple("Expenses", "Record operating expenses and payment methods.", expenseService, [{ name: "category", label: "Category" }, { name: "amount", label: "Amount", type: "number", min: "0.01", step: "0.01" }, { name: "expenseDate", label: "Date", type: "date" }, { name: "description", label: "Description", required: false }, { name: "paymentMethod", label: "Payment method" }], [{ key: "category", label: "Category" }, { key: "amount", label: "Amount" }, { key: "expenseDate", label: "Date" }, { key: "paymentMethod", label: "Method" }], ["amount"]);
+
+export function BrandsPage() {
+    const [categories, setCategories] = useState([]);
+    useEffect(() => { categoryService.list().then(setCategories).catch(() => {}); }, []);
+    return <ManagementPage title="Brands" description="Manage brands linked to product categories." service={brandService} fields={[{ name: "name", label: "Brand name" }, { name: "description", label: "Description", required: false }, { name: "categoryId", label: "Category", type: "select", options: categories }]} columns={[{ key: "name", label: "Brand" }, { key: "categoryName", label: "Category" }, { key: "description", label: "Description" }, { key: "isActive", label: "Status" }]} />;
+}
+export const InventoryPage = simple("Inventory", "Monitor quantities by product and storage location.", inventoryService, [{ name: "productId", label: "Product ID", type: "number", min: "1" }, { name: "godownId", label: "Godown ID", type: "number", min: "1" }, { name: "quantity", label: "Quantity", type: "number", min: "0" }], [{ key: "productName", label: "Product" }, { key: "godownName", label: "Godown" }, { key: "quantity", label: "Quantity" }]);
+
+export function ReportsPage() {
+    const [report, setReport] = useState(null); const [customers, setCustomers] = useState([]); const [suppliers, setSuppliers] = useState([]); const [loading, setLoading] = useState(true); const [error, setError] = useState("");
+    useEffect(() => { Promise.all([reportService.business(), reportService.customers(), reportService.suppliers()]).then(([business, customerRows, supplierRows]) => { setReport(business); setCustomers(customerRows); setSuppliers(supplierRows); }).catch((err) => setError(apiError(err, "Unable to load reports."))).finally(() => setLoading(false)); }, []);
+    const cards = [{ label: "Sales", key: "totalSales" }, { label: "Purchases", key: "totalPurchases" }, { label: "Expenses", key: "totalExpenses" }, { label: "Net profit", key: "netProfit" }];
+    return <div className="page-container"><div className="page-header"><p className="eyebrow">Insights</p><h1>Reports</h1><p>Business performance and outstanding balances.</p></div>{error && <div className="alert error">{error}</div>}{loading ? <div className="panel"><p className="muted">Loading reports...</p></div> : <><div className="report-cards">{cards.map((card) => <div className="report-card" key={card.key}><span>{card.label}</span><strong>{money(report?.[card.key])}</strong></div>)}</div><div className="report-columns"><ReportTable title="Customer receivables" rows={customers} nameKey="customerName" totalKey="totalSales" paidKey="totalPaid" outstandingKey="outstandingAmount" totalLabel="Sales" /><ReportTable title="Supplier payables" rows={suppliers} nameKey="supplierName" totalKey="totalPurchases" paidKey="totalPaid" outstandingKey="outstandingAmount" totalLabel="Purchases" /></div></>}</div>;
+}
+
+function ReportTable({ title, rows, nameKey, totalKey, paidKey, outstandingKey, totalLabel }) {
+    return <section className="panel report-panel"><h2>{title}</h2><div className="table-wrap"><table><thead><tr><th>Name</th><th>{totalLabel}</th><th>Paid</th><th>Outstanding</th></tr></thead><tbody>{rows.length === 0 ? <tr><td colSpan="4" className="table-message">No outstanding balances.</td></tr> : rows.map((row) => <tr key={row.customerId || row.supplierId}><td>{row[nameKey]}</td><td>{money(row[totalKey])}</td><td>{money(row[paidKey])}</td><td className="amount-due">{money(row[outstandingKey])}</td></tr>)}</tbody></table></div></section>;
+}
