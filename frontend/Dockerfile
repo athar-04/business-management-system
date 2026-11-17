@@ -2,10 +2,21 @@ FROM node:22-alpine AS build
 
 WORKDIR /app
 
+# Receive API URL from Render build arguments
+ARG VITE_API_BASE_URL
+
+# Install dependencies
 COPY package*.json ./
 RUN npm install
 
+# Copy frontend source
 COPY . .
+
+# Verify API URL is available
+RUN test -n "$VITE_API_BASE_URL" || \
+    (echo "ERROR: VITE_API_BASE_URL is missing!" && exit 1)
+
+# Build frontend with the API URL
 RUN npm run build
 
 
